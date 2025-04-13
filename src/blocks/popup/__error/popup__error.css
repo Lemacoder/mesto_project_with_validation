@@ -1,0 +1,7 @@
+.popup__error {
+    color: red; /* Красный цвет текста ошибки */
+    display: block; /* Чтобы ошибка занимала место в разметке */
+    min-height: 12px; /* Минимальная высота, чтобы избежать скачков */
+    font-family: Inter, Arial, sans-serif;
+  font-size: 12px;
+  }
