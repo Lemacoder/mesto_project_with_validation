@@ -1,22 +1,21 @@
-@import url('./__description/profile__description.css');
-@import url('./__add-button/profile__add-button.css');
-@import url('./__edit-button/profile__edit-button.css');
-@import url('./__info/profile__info.css');
-@import url('./__title/profile__title.css');
-@import url('./__image/profile__image.css');
-
 .profile {
-  font-family: 'Inter', Arial, sans-serif;
-  color: #fff;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 0 50px;
   display: flex;
   align-items: center;
-  padding: 36px 0;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 880px) {
   .profile {
-    padding: 43px 0;
+    padding: 40px 19px 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .profile {
     flex-direction: column;
-    text-align: center;
+    padding-top: 42px;
+    padding-bottom: 36px;
   }
 }
