@@ -2,7 +2,7 @@
   "name": "mesto_project_with_validation",
   "version": "1.0.0",
   "description": "---\r ### В этой работе необходимо добавить функционал ресурса Mesto",
-  "main": "webpack.config.js",
+  "main": "index.js",
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
