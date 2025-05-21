@@ -1,8 +1,14 @@
 {
-  "name": "mesto_project_with_validation",
-  "version": "1.0.0",
-  "description": "---\r ### В этой работе необходимо добавить функционал ресурса Mesto",
+  "name": "mesto-step1",
+  "version": "0.0.1",
+  "description": "Learning platform",
   "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "author": "Sofya Mikhailova",
+  "license": "",
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
@@ -22,18 +28,4 @@
     "core-js": "^3.41.0",
     "jquery": "^3.7.1"
   }
-  "scripts": {
-    "build": "webpack --mode production",
-    "dev": "webpack serve --mode production"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Lemacoder/mesto_project_with_validation.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Lemacoder/mesto_project_with_validation/issues"
-  },
-  "homepage": "https://github.com/Lemacoder/mesto_project_with_validation#readme"
 }

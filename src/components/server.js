@@ -6,7 +6,7 @@ let user_id = null;
 export function serverUser() {
     fetch('https://nomoreparties.co/v1/apf-cohort-202/users/me', {
         headers: {
-          authorization: 'c6f39b35-acde-4bea-9a76-beb0de6a82d6'
+          authorization: '1de85579-7d0e-4533-a5e4-59dce429e385'
         }
       })
         .then(res => res.json())
@@ -21,7 +21,7 @@ export function serverUser() {
 export function serverCards() {
     fetch('https://nomoreparties.co/v1/apf-cohort-202/cards', {
         headers: {
-          authorization: 'c6f39b35-acde-4bea-9a76-beb0de6a82d6'
+          authorization: '1de85579-7d0e-4533-a5e4-59dce429e385'
         }
       })
         .then(res => res.json())
@@ -40,7 +40,7 @@ export function updateUser(Name, Description) {
   fetch('https://nomoreparties.co/v1/apf-cohort-202/users/me', {
     method: 'PATCH',
     headers: {
-      authorization: 'c6f39b35-acde-4bea-9a76-beb0de6a82d6',
+      authorization: '1de85579-7d0e-4533-a5e4-59dce429e385',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
@@ -54,7 +54,7 @@ export function appendCard(CardName, TypeUrl) {
   return fetch('https://nomoreparties.co/v1/apf-cohort-202/cards', {
     method: 'POST',
     headers: {
-      authorization: 'c6f39b35-acde-4bea-9a76-beb0de6a82d6',
+      authorization: '1de85579-7d0e-4533-a5e4-59dce429e385',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
@@ -75,7 +75,7 @@ export function deleteCard (cardId) {
   fetch(requst, {
     method: 'DELETE',
     headers: {
-      authorization: 'c6f39b35-acde-4bea-9a76-beb0de6a82d6',
+      authorization: '1de85579-7d0e-4533-a5e4-59dce429e385',
     },
   });
 }
@@ -85,7 +85,7 @@ export function addLike (cardId) {
   fetch(requst, {
     method: 'PUT',
     headers: {
-      authorization: 'c6f39b35-acde-4bea-9a76-beb0de6a82d6',
+      authorization: '1de85579-7d0e-4533-a5e4-59dce429e385',
     },
   });
 
@@ -97,7 +97,7 @@ export function deleteLike (cardId) {
   fetch(requst, {
     method: 'DELETE',
     headers: {
-      authorization: 'c6f39b35-acde-4bea-9a76-beb0de6a82d6',
+      authorization: '1de85579-7d0e-4533-a5e4-59dce429e385',
     },
   });
 }
