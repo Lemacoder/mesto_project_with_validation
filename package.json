@@ -7,7 +7,7 @@
     "build": "webpack --mode production",
     "dev": "webpack serve"
   },
-  "author": "Sofya Mikhailova",
+  "author": "Lsdygina Anastasia",
   "license": "",
   "devDependencies": {
     "@babel/core": "^7.26.10",
