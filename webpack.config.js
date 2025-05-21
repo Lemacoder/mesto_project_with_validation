@@ -1,50 +1,53 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // Импорт плагина
-const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // Импорт плагина для извлечения CSS
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/scripts/index.js', // Входная точка для JavaScript
+  entry: {
+    main: './src/components/index.js'
+  },
   output: {
-    path: path.resolve(__dirname, 'dist'), // Директория для сборки
-    filename: 'main.js', // Имя выходного файла
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js',
+    publicPath: '',
+  },
+  mode: 'development',
+  devServer: {
+    static: path.resolve(__dirname, './dist'),
+    open: true,
+    compress: true,
+    port: 8096
   },
   module: {
-    rules: [
-      {
-        test: /\.css$/, // Загрузка CSS файлов
-        use: [
-          MiniCssExtractPlugin.loader, // Извлечение CSS в отдельный файл
-          'css-loader', // Загрузка и обработка CSS
-        ],
+    rules: [{
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: '/node_modules/'
       },
       {
-        test: /\.(png|jpg|svg)$/, // Загрузка изображений
+        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
         type: 'asset/resource',
-        generator: {
-          filename: 'images/[name][ext]', // Путь для изображений
-        },
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/, // Загрузка шрифтов
-        type: 'asset/resource',
-        generator: {
-          filename: 'fonts/[name][ext]', // Путь для шрифтов
-        },
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          'postcss-loader'
+        ]
       },
-    ],
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // Шаблон HTML
-      filename: 'index.html',       // Выходной файл HTML
+      template: './src/index.html'
     }),
-    new MiniCssExtractPlugin({
-      filename: 'main.css', // Имя выходного CSS файла
-    }),
-  ],
-  devServer: {
-    static: path.resolve(__dirname, 'dist'), // Папка для сервера разработки
-    port: 8080, // Порт для локального хостинга
-    open: true, // Автоматическое открытие браузера
-  },
-};
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
+
+  ]
+}
